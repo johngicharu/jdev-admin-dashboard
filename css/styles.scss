@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+html,
+body {
+	font-size: 16px;
+	line-height: 1.5;
+	font-family: roboto, sans-serif;
+	background-image: linear-gradient(120deg, #ececec, #f5eded);
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+
+	&:hover {
+		color: inherit;
+	}
+}
+
+li {
+	list-style-type: none;
+}
+
+// Card
+.card {
+	display: block;
+	border-radius: 0.5rem;
+	background-image: linear-gradient(101deg, white, #dfd9d9);
+	padding: 2rem 1rem;
+	margin: 0.5rem auto;
+	max-width: 90%;
+}
+
+.container {
+	max-width: 1300px;
+	max-height: 100vh;
+	// overflow-y: hidden;
+}
+
+// Appbar
+.appbar {
+	height: 4rem;
+	background-color: #555;
+	max-width: 100%;
+}
+
+// Navbar
+.nav {
+	position: relative;
+	display: flex;
+	justify-content: space-evenly;
+	height: 100%;
+	width: 100%;
+
+	.brand-logo {
+		position: absolute;
+		top: 70%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: white;
+		height: 100%;
+		font-size: 1.5rem;
+	}
+
+	.sidenav-trigger {
+		position: absolute;
+		top: 50%;
+		left: 1rem;
+		transform: translateY(-50%);
+		color: white;
+		font-size: 1.7rem;
+
+		&.icon {
+			border: 1px solid white;
+			border-radius: 50%;
+			height: 2rem;
+			width: 2rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}
+
+// Aside
+.sidenav {
+	width: 20%;
+	height: 100%;
+	padding: 0;
+	font-size: 1rem;
+	transition: all 300ms ease-in-out;
+}
+
+// Collection
+.collection {
+	width: 100%;
+	height: 100%;
+
+	.collection-item {
+		border-bottom: 1px solid #444;
+		font-size: inherit;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 0.6rem 0.2rem;
+		margin: 0;
+
+		.text {
+			transition: all 300ms ease-in-out;
+		}
+
+		&.active {
+			background-image: linear-gradient(101deg, aqua, #318d91);
+			color: white;
+		}
+
+		&:hover {
+			color: white;
+			background-image: linear-gradient(101deg, #269b9b, #52eb78);
+		}
+	}
+}
+
+// Sidebar condensed
+.condensed {
+	width: 5%;
+
+	.collection-item {
+		a {
+			position: relative;
+
+			&::before {
+				content: attr(data-title);
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translate(120%, -50%);
+				background-image: linear-gradient(101deg, #05bdbd, #13c563);
+				color: white;
+				padding: 0.3rem 0.7rem;
+				border-radius: 5px;
+				opacity: 0;
+				transition: all 300ms ease-in-out;
+			}
+		}
+
+		&:hover {
+			a {
+				&::before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	i {
+		font-size: 1.1rem;
+	}
+
+	.text {
+		display: none;
+	}
+}
+
+// Main
+.main {
+	min-width: 100%;
+	min-height: calc(100vh - 4rem);
+	display: flex;
+	overflow-x: hidden;
+	// overflow-y: hidden;
+}
+
+// Output
+.output {
+	min-height: 100%;
+	width: 80%;
+	background-image: linear-gradient(90deg, dodgerblue, aqua);
+	padding: 0;
+	transition: all 300ms ease-in-out;
+
+	&.condensed-active {
+		width: 95%;
+	}
+
+	.info-bar {
+		height: 3rem;
+		max-width: 100%;
+		background-image: linear-gradient(45deg, #222, #444);
+		color: white;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 0 1rem;
+		box-shadow: rgba(0, 0, 0, 0.5) 0 0.2rem 2px 5px;
+
+		.route {
+			position: relative;
+			padding-left: 0.6rem;
+
+			&::before {
+				content: "/";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				color: white;
+				font-weight: 700;
+			}
+		}
+	}
+
+	.content {
+		width: 100%;
+		max-height: calc(100% - 3rem);
+		padding: 0.5rem 0;
+
+		.summary {
+			display: flex;
+
+			.card {
+				max-width: 33.3%;
+				background-image: linear-gradient(101deg, #37b2bb, #21ac8e);
+				color: #fff;
+				text-shadow: #252525 0 0 3px;
+			}
+		}
+	}
+}

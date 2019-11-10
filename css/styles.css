@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+html,
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: roboto, sans-serif;
+  background-image: linear-gradient(120deg, #ececec, #f5eded);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+.card {
+  display: block;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(101deg, white, #dfd9d9);
+  padding: 2rem 1rem;
+  margin: 0.5rem auto;
+  max-width: 90%;
+}
+
+.container {
+  max-width: 1300px;
+  max-height: 100vh;
+}
+
+.appbar {
+  height: 4rem;
+  background-color: #555;
+  max-width: 100%;
+}
+
+.nav {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+}
+
+.nav .brand-logo {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+  height: 100%;
+  font-size: 1.5rem;
+}
+
+.nav .sidenav-trigger {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: white;
+  font-size: 1.7rem;
+}
+
+.nav .sidenav-trigger.icon {
+  border: 1px solid white;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidenav {
+  width: 20%;
+  height: 100%;
+  padding: 0;
+  font-size: 1rem;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.collection {
+  width: 100%;
+  height: 100%;
+}
+
+.collection .collection-item {
+  border-bottom: 1px solid #444;
+  font-size: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0.6rem 0.2rem;
+  margin: 0;
+}
+
+.collection .collection-item .text {
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.collection .collection-item.active {
+  background-image: linear-gradient(101deg, aqua, #318d91);
+  color: white;
+}
+
+.collection .collection-item:hover {
+  color: white;
+  background-image: linear-gradient(101deg, #269b9b, #52eb78);
+}
+
+.condensed {
+  width: 5%;
+}
+
+.condensed .collection-item a {
+  position: relative;
+}
+
+.condensed .collection-item a::before {
+  content: attr(data-title);
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(120%, -50%);
+          transform: translate(120%, -50%);
+  background-image: linear-gradient(101deg, #05bdbd, #13c563);
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+  opacity: 0;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.condensed .collection-item:hover a::before {
+  opacity: 1;
+}
+
+.condensed i {
+  font-size: 1.1rem;
+}
+
+.condensed .text {
+  display: none;
+}
+
+.main {
+  min-width: 100%;
+  min-height: calc(100vh - 4rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.output {
+  min-height: 100%;
+  width: 80%;
+  background-image: -webkit-gradient(linear, left top, right top, from(dodgerblue), to(aqua));
+  background-image: linear-gradient(90deg, dodgerblue, aqua);
+  padding: 0;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.output.condensed-active {
+  width: 95%;
+}
+
+.output .info-bar {
+  height: 3rem;
+  max-width: 100%;
+  background-image: linear-gradient(45deg, #222, #444);
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 0.2rem 2px 5px;
+          box-shadow: rgba(0, 0, 0, 0.5) 0 0.2rem 2px 5px;
+}
+
+.output .info-bar .route {
+  position: relative;
+  padding-left: 0.6rem;
+}
+
+.output .info-bar .route::before {
+  content: "/";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  color: white;
+  font-weight: 700;
+}
+
+.output .content {
+  width: 100%;
+  max-height: calc(100% - 3rem);
+  padding: 0.5rem 0;
+}
+
+.output .content .summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.output .content .summary .card {
+  max-width: 33.3%;
+  background-image: linear-gradient(101deg, #37b2bb, #21ac8e);
+  color: #fff;
+  text-shadow: #252525 0 0 3px;
+}
+/*# sourceMappingURL=styles.css.map */
